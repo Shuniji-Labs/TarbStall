@@ -5,5 +5,7 @@ read yesntquestion
 if [ $yesntquestion = n ]; then
     break
 else
+    #do the other shit we need for depends such as curl/wget and make
+    mkdir tmp
     touch .inited
 fi
