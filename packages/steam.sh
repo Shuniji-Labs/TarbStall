@@ -5,4 +5,4 @@ cd steam-launcher
 sudo make install
 cd ..
 rm -rf steam-launcher
-rm -rf steam-latest.tar.gz
+rm -f steam-latest.tar.gz
