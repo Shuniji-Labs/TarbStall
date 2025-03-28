@@ -7,7 +7,8 @@ if [ $install = n ]; then
 else
     mkdir tmp
     touch .inited
-    sudo git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin
+    mkdir /usr/local/bin/TarbStall
+    sudo git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
     sudo ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
 fi
 echo TarbStall should be installed!
