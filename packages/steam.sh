@@ -1,4 +1,4 @@
-cd tmp
+cd /usr/local/bin/TarbStall/tmp
 curl -O https://repo.steampowered.com/steam/archive/precise/steam_latest.tar.gz
 tar -xvzf steam_latest.tar.gz
 cd steam-launcher
