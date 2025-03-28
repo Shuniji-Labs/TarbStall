@@ -37,7 +37,7 @@ elif [ "$1" = update ]; then
     mkdir "/tmp/tarbstall-update"
     git clone https://github.com/Shuniji-Labs/TarbStall.git /tmp/tarbstall-update
     if [ "$TARBSTALL_INSTALLED" = 1 ]; then
-        cp -vr /tmp/tarbstall-update/* "/usr/local/bin/tarbstall"
+        cp -vr /tmp/tarbstall-update/* "/usr/local/bin/TarbStall"
     else
         cp -vr /tmp/tarbstall-update/* "$PWD"
     fi
