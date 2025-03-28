@@ -8,5 +8,6 @@ else
     mkdir tmp
     touch .inited
     sudo git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin
+    sudo ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
 fi
 echo TarbStall should be installed!
