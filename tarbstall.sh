@@ -32,7 +32,7 @@ elif [ "$1" = update ]; then
     rm -rf "/tmp/tarbstall-update"
     mkdir "/tmp/tarbstall-update"
     git clone https://github.com/Shuniji-Labs/TarbStall.git /tmp/tarbstall-update
-        cp -vr /tmp/tarbstall-update/* "/usr/local/bin/TarbStall"
+    sudo cp -vr /tmp/tarbstall-update/* "/usr/local/bin/TarbStall"
 elif [ -z "$1" ]; then
     echo "$help"
 fi
