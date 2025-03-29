@@ -29,6 +29,8 @@ elif [ "$1" = search ]; then
         cd ~/ #placeholder until fix
     fi
 elif [ "$1" = update ]; then
+    echo Updating TarbStall...
+    sleep 1
     rm -rf "/tmp/tarbstall-update"
     mkdir "/tmp/tarbstall-update"
     git clone https://github.com/Shuniji-Labs/TarbStall.git /tmp/tarbstall-update
