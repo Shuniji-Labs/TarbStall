@@ -17,24 +17,32 @@ echo_green() {
     echo -e "${GREEN}$1${NC}"
 }
 
-echo -e "TarbStall Installer\n"
-sleep 3
+echo -e "\nTarbStall Installer\n"
+sleep 2
 
 if [[ $EUID -ne 0 ]]; then
     echo_red "This script must be run as root."
-    echo "Breaking.."
     exit 0
 fi
 
 install_tarbstall() {
-    mkdir /usr/local/bin/TarbStall || { echo_red "An error has occurred: MKDir failed."; exit 0; }
-    git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall || { echo_red "Failed cloning TarbStall!"; exit 0; }
-    ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall || echo_red "Failed making symlink!"
-    mkdir /usr/local/bin/TarbStall/tmp || echo_yellow "Failed to make temporary path. Please, open a new terminal and run 'sudo mkdir /usr/local/bin/TarbStall/tmp'"
-    chmod +x /usr/local/bin/tarbstall || echo_red "Failed to give executable permission."
+    echo -e "\nSetting up directories..."
+    mkdir /usr/local/bin/TarbStall || { echo_red "Failed to create directory."; exit 0; }
+
+    echo -e "\nDownloading TarbStall..."
+    git clone -q https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall || { echo_red "Download failed."; exit 0; }
+
+    echo -e "\nCreating symlink..."
+    ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall || echo_red "Failed to create symlink."
+
+    echo -e "\nPreparing temporary storage..."
+    mkdir /usr/local/bin/TarbStall/tmp || echo_yellow "Could not create temporary directory. Run: sudo mkdir /usr/local/bin/TarbStall/tmp"
+
+    echo -e "\nSetting permissions..."
+    chmod +x /usr/local/bin/tarbstall || echo_red "Failed to set executable permissions."
 }
 
-echo "Welcome to the TarbStall installer. Would you like to install TarbStall? (Y/n)"
+echo -e "Install TarbStall? (Y/n)"
 read -p "> " user_choice
 
 if [[ $user_choice == "n" || $user_choice == "N" ]]; then
@@ -45,4 +53,4 @@ else
     exit 0
 fi
 
-echo_green "TarbStall should be installed!"
+echo_green "\nTarbStall installation complete!"
