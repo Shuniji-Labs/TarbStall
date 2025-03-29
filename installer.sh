@@ -7,13 +7,14 @@ NC='\033[0m'
 echo_red() { echo -e "${RED}$1${NC}" }
 echo_yellow() { echo -e "${YELLOW}$1${NC}" }
 echo_green() { echo -e "${GREEN}$1${NC}" }
+splash() { echo -e IF9fX19fICAgICAgICAgIF8gICAgX19fXyAgXyAgICAgICAgXyBfIAp8XyAgIF98XyBfIF8gX198IHxfXy8gX19ffHwgfF8gX18gX3wgfCB8CiAgfCB8LyBfYCB8ICdfX3wgJ18gXF9fXyBcfCBfXy8gX2AgfCB8IHwKICB8IHwgKF98IHwgfCAgfCB8XykgfF9fKSB8IHx8IChffCB8IHwgfAogX3xffFxfXyxffF98ICB8Xy5fXy9fX19fL19cX19cX18sX3xffF98fF8gX3xfIF9fICBfX198IHxfIF9fIF98IHwgfCBfX18gXyBfXyAgIAogfCB8fCAnXyBcLyBfX3wgX18vIF9gIHwgfCB8LyBfIFwgJ19ffCAgCiB8IHx8IHwgfCBcX18gXCB8fCAoX3wgfCB8IHwgIF9fLyB8ICAgICAKfF9fX3xffCB8X3xfX18vXF9fXF9fLF98X3xffFxfX198X3wg | base64 -d
 clear
 tput cup 0 0
 echo -e "TarbStall Installer\n"
 sleep 2
 
 if [[ $EUID -ne 0 ]]; then
-    echo_red "This script must be run as root."
+    echo_red "installer has to be run as root you fucking numbskull"
     exit 0
 fi
 
@@ -35,14 +36,14 @@ install_tarbstall() {
 }
 
 echo -e "would you like to install TarbStall? (y/n)"
-read -p "> " user_choice
+read -p "> " choice
 
-if [[ $user_choice == "n" || $user_choice == "N" ]]; then
+if [[ $c == "n" || $c == "N" ]]; then
     exit 0
-elif [[ $user_choice == "y" || $user_choice == "Y" ]]; then
+elif [[ $c == "y" || $c == "Y" ]]; then
     install_tarbstall
 else
     exit 0
 fi
 
-echo_green "TarbStall installation complete!"
+echo_green "wow! tarbstall installed, congrats or something"
