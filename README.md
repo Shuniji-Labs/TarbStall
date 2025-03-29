@@ -13,6 +13,6 @@ A package manager that install tarballs from scripts available in /packages.
 - [.kraeb](https://discord.com/users/721608676783423499) - Cleaning up and formatting the scripts
 
 ## Installation instructions:
-Run this code in your terminal to install the package manager:
-`curl -LO https://raw.githubusercontent.com/Shuniji-Labs/TarbStall/refs/heads/main/installer.sh && sudo bash installer.sh`
+Run this code in your terminal to install the package manager:\
+`curl -LO https://raw.githubusercontent.com/Shuniji-Labs/TarbStall/refs/heads/main/installer.sh && sudo bash installer.sh`\
 The package will be installed into /usr/local/bin.
