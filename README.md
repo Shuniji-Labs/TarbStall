@@ -10,7 +10,7 @@ A package manager that install tarballs from scripts available in /packages.
 
 ## Credits:
 - [simpansoftware](https://discord.com/users/1001820177731686500) - Most of the work on the package manager
-- [.kraeb](https://discord.com/users/721608676783423499) - Cleaning up and formatting the scripts
+- [.kraeb](https://discord.com/users/721608676783423499) - Adding sudo check to installer.sh and additional general work
 
 ## Installation instructions:
 Run this code in your terminal to install the package manager:\
