@@ -5,9 +5,8 @@ read install
 if [ $install = n ]; then
     exit 0
 else
-    mkdir tmp
-    touch .inited
     mkdir /usr/local/bin/TarbStall
+    mkdir /usr/local/bin/TarbStall/tmp
     sudo git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
     sudo ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
     sudo chmod +x /usr/local/bin/tarbstall
