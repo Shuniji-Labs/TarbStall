@@ -21,7 +21,7 @@ else
         chmod +x /usr/local/bin/tarbstall
         touch /usr/local/bin/TarbStall/packages/sources.txt
         echo -e chromeos >> /usr/local/bin/TarbStall/packages/sources.txt
-        echo "Run this command in your terminal for crosh compatibility: curl -LO https://raw.githubusercontent.com/chromebrew/crew-sudo/refs/heads/main/install.sh && bash install.sh"
+        echo "Run "tarbstall install crew-sudo" afterwards."
     else
         mkdir /usr/local/bin/TarbStall
         git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
