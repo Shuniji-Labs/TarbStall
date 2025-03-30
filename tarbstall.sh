@@ -16,7 +16,10 @@ elif [ "$1" = install ]; then
         if [ $install = n ]; then
             exit 0
         else
-            sudo bash "/usr/local/bin/TarbStall/packages/$2.sh"
+            if grep -iq "chromeos" /usr/local/bin/TarbStall/packages/sources.txt; then
+                sudo bash "/usr/local/bin/TarbStall/packages/chromeos/$2.sh"
+            else
+                sudo bash "/usr/local/bin/TarbStall/packages/linux/$2.sh"
         fi
     else
         echo "Package $2 not found. :sob:"
