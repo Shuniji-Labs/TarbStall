@@ -1,5 +1,6 @@
 #/bin/bash
 
+platform=$(cat /usr/local/bin/TarbStall/packages/sources.txt)
 help="HELP - Shows this help message
 INSTALL - Installs a package, packages available are in /packages
 SEARCH - Searches for packages to install in /packages
@@ -10,7 +11,7 @@ if [ "$1" = help ]; then
 elif [ "$1" = install ]; then
     if [ -z "$2" ]; then
         echo "Specify a package for fucks sake"
-    elif [ -f "/usr/local/bin/TarbStall/packages/$2.sh" ]; then
+    elif [ -f "/usr/local/bin/TarbStall/packages/$platform/$2.sh" ]; then
         echo "Are you sure you want to install $2? Y/n"
         read install
         if [ $install = n ]; then
@@ -21,7 +22,7 @@ elif [ "$1" = install ]; then
                     bash "/usr/local/bin/TarbStall/packages/chromeos/$2.sh"
                 fi
             else
-                sudo bash "/usr/local/bin/TarbStall/packages/linux/$2.sh"
+                sudo bash "/usr/local/bin/TarbStall/packages/$platform/$2.sh"
             fi
         fi
     else
