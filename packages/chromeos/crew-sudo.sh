@@ -1,4 +1,5 @@
 #!/bin/bash -eu
+exec sudo -u $SUDO_USER "$0" "$@"
 if [ -n "${CREW_DEST_PREFIX}" ]; then
   INSTALL_PREFIX="${CREW_DEST_PREFIX}"
 else
