@@ -17,10 +17,12 @@ elif [ "$1" = install ]; then
         if [ $install = n ]; then
             exit 0
         else
-            if grep -iq "chromeos" /usr/local/bin/TarbStall/packages/sources.txt; then
-                if [ "$2" = crew-sudo ]; then
+            if [ "$2" = crew-sudo ]; then
+                if grep -iq "chromeos" /usr/local/bin/TarbStall/packages/sources.txt; then
                     cd ~
                     curl -LO https://raw.githubusercontent.com/chromebrew/crew-sudo/refs/heads/main/install.sh && bash install.sh
+                else
+                    sudo bash "/usr/local/bin/TarbStall/packages/$platform/$2.sh"
                 fi
             else
                 sudo bash "/usr/local/bin/TarbStall/packages/$platform/$2.sh"
