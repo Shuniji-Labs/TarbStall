@@ -33,7 +33,7 @@ elif [ "$1" = search ]; then
         echo "Specify a package for fucks sake"    
     else
         echo Available packages are:
-        cd /usr/local/bin/TarbStall/packages/
+        cd /usr/local/bin/TarbStall/packages/$platform
         ls *$2*.sh | sed 's/.sh$//'
         cd ~/ #placeholder until fix
     fi
