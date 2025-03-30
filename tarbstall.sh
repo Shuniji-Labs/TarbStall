@@ -1,3 +1,5 @@
+#/bin/bash
+
 help="HELP - Shows this help message
 INSTALL - Installs a package, packages available are in /packages
 SEARCH - Searches for packages to install in /packages
