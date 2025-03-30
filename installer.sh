@@ -1,3 +1,5 @@
+#/bin/bash
+
 echo -e "TarbStall Installer\n"
 sleep 3
 if [[ $EUID -ne 0 ]]; then
