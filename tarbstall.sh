@@ -17,7 +17,9 @@ elif [ "$1" = install ]; then
             exit 0
         else
             if grep -iq "chromeos" /usr/local/bin/TarbStall/packages/sources.txt; then
-                sudo bash "/usr/local/bin/TarbStall/packages/chromeos/$2.sh"
+                if [ "$2" = crew-sudo ]; then
+                    bash "/usr/local/bin/TarbStall/packages/chromeos/$2.sh"
+                fi
             else
                 sudo bash "/usr/local/bin/TarbStall/packages/linux/$2.sh"
             fi
