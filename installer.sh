@@ -14,7 +14,7 @@ if [ $install = n ]; then
     exit 0
 else
     if grep -iq "chromeos" /etc/os-release; then
-        curl -LO https://raw.githubusercontent.com/chromebrew/crew-sudo/refs/heads/main/install.sh && bash install.sh
+        echo "Run this command in your terminal: curl -LO https://raw.githubusercontent.com/chromebrew/crew-sudo/refs/heads/main/install.sh && bash install.sh then rerun the install script"
         mkdir /usr/local/bin/TarbStall
         git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
         ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
