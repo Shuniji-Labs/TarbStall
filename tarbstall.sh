@@ -20,6 +20,7 @@ elif [ "$1" = install ]; then
                 sudo bash "/usr/local/bin/TarbStall/packages/chromeos/$2.sh"
             else
                 sudo bash "/usr/local/bin/TarbStall/packages/linux/$2.sh"
+            fi
         fi
     else
         echo "Package $2 not found. :sob:"
