@@ -3,7 +3,7 @@
 help="HELP - Shows this help message
 INSTALL - Installs a package, packages available are in /packages
 SEARCH - Searches for packages to install in /packages
-UPDATE - Fetches package updates and TarbStall Updates"
+UPDATE - Fetches package updates and TarbStall updates"
 
 if [ "$1" = help ]; then
     echo "$help"
