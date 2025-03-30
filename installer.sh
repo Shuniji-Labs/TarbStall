@@ -13,10 +13,19 @@ read -p "> " install
 if [ $install = n ]; then
     exit 0
 else
-    mkdir /usr/local/bin/TarbStall
-    git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
-    ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
-    mkdir /usr/local/bin/TarbStall/tmp
-    chmod +x /usr/local/bin/tarbstall
+    if grep -iq "chromeos" /etc/os-release; then
+        curl -LO https://raw.githubusercontent.com/chromebrew/crew-sudo/refs/heads/main/install.sh && bash install.sh
+        mkdir /usr/local/bin/TarbStall
+        git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
+        ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
+        mkdir /usr/local/bin/TarbStall/tmp
+        chmod +x /usr/local/bin/tarbstall
+    else
+        mkdir /usr/local/bin/TarbStall
+        git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
+        ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
+        mkdir /usr/local/bin/TarbStall/tmp
+        chmod +x /usr/local/bin/tarbstall
+    fi
 fi
 echo "TarbStall should be installed!"
