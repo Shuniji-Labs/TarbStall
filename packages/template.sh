@@ -1,3 +1,5 @@
+#/bin/bash
+
 cd /usr/local/bin/TarbStall/tmp
 curl -O https://example.com/example.tar.gz
 tar -xvzf example.tar.gz
