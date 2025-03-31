@@ -11,3 +11,4 @@ sudo make install DESTDIR=/usr/local/bin/TarbStall/packages/installed/steam
 cd ..
 rm -rf steam-launcher
 rm -f steam-latest.tar.gz
+ln -s /usr/local/bin/TarbStall/packages/installed/steam/usr/bin /usr/local/bin/steam2
