@@ -47,8 +47,6 @@ elif [ "$1" = update ]; then
     git clone https://github.com/Shuniji-Labs/TarbStall.git /tmp/tarbstall-update
     sudo cp -vr /tmp/tarbstall-update/* "/usr/local/bin/TarbStall"
     rm -rf "/tmp/tarbstall-update" 
-elif [ "$1" = directory ]; then
-    cd /usr/local/bin/TarbStall   
 elif [ -z "$1" ]; then
     echo "$help"
 fi
