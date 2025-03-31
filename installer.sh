@@ -18,6 +18,7 @@ else
         git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
         ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
         mkdir /usr/local/bin/TarbStall/tmp
+        mkdir /usr/local/bin/TarbStall/installed
         chmod +x /usr/local/bin/tarbstall
         touch /usr/local/bin/TarbStall/packages/sources.txt
         echo -e chromeos >> /usr/local/bin/TarbStall/packages/sources.txt
@@ -27,6 +28,7 @@ else
         git clone https://github.com/Shuniji-Labs/TarbStall.git /usr/local/bin/TarbStall
         ln -s /usr/local/bin/TarbStall/tarbstall.sh /usr/local/bin/tarbstall
         mkdir /usr/local/bin/TarbStall/tmp
+        mkdir /usr/local/bin/TarbStall/installed
         chmod +x /usr/local/bin/tarbstall
         touch /usr/local/bin/TarbStall/packages/sources.txt
         echo -e linux >> /usr/local/bin/TarbStall/packages/sources.txt
