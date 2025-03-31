@@ -1,6 +1,12 @@
 #/bin/bash
 
 if command -v pacman &>/dev/null; then
+    if grep -qE '^\[multilib\]' /etc/pacman.conf && grep -qv '^#' /etc/pacman.conf; then
+        echo "multilib is already enabled. we dont have to enable it :yippee:"
+    else
+        echo "dumbass forgot to enable multilib :skull:"
+        sudo sed -i '/^\[multilib\]/,/^$/s/^#//g' /etc/pacman.conf
+    fi
     sudo pacman -Sy --noconfirm base-devel lib32-glibc lib32-libgl lib32-libdrm
 elif command -v apt-get &>/dev/null; then
     sudo apt-get update
@@ -21,4 +27,3 @@ sudo make install DESTDIR=/usr/local/bin/TarbStall/packages/installed/steam
 cd ..
 rm -rf steam-launcher
 rm -f steam-latest.tar.gz
-ln -s /usr/local/bin/TarbStall/packages/installed/steam/usr/bin/steam /usr/local/bin/steam
