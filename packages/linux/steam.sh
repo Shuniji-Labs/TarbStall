@@ -1,5 +1,15 @@
 #/bin/bash
 
+if command -v pacman &>/dev/null; then
+    sudo pacman -Sy --noconfirm base-devel lib32-glibc lib32-libgl lib32-libdrm
+elif command -v apt-get &>/dev/null; then
+    sudo apt-get update
+    sudo apt-get install -y build-essential lib32-glibc libgl1-mesa-glx libdrm2
+else
+    echo "we do not like you stinky non arch/debian users"
+    exit 1
+fi
+
 mkdir /usr/local/bin/packages/installed/steam
 cd /usr/local/bin/TarbStall/tmp
 curl -O https://repo.steampowered.com/steam/archive/precise/steam_latest.tar.gz
